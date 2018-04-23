@@ -190,21 +190,7 @@ P2PServer::P2PServer(EventLoop* loop,
         boost::bind(&P2PServer::onMessage, this, _1, _2, _3));
 }
 /*
-void P2PServer::onRequest(const TcpConnectionPtr& conn, const HttpRequest& req)
-{
-  const string& connection = req.getHeader("Connection");
-  bool close = connection == "close" ||
-    (req.getVersion() == HttpRequest::kHttp10 && connection != "Keep-Alive");
-  HttpResponse response(close);
-  httpCallback_(req, &response);
-  Buffer buf;
-  response.appendToBuffer(&buf);
-  conn->send(&buf);
-  if (response.closeConnection())
-  {
-    conn->shutdown();
-  }
-}
+ 
 */
 
 
